@@ -1,0 +1,77 @@
+{
+  "name": "agent-ready",
+  "displayName": "Agent Ready Website Audit",
+  "description": "SEO and AI search audit for any website, in VS Code: technical SEO, schema markup, AI crawler access, robots.txt, sitemaps and llms.txt. Adds the Agent Ready MCP server to Copilot agent mode.",
+  "version": "0.1.0",
+  "publisher": "workpods",
+  "license": "Apache-2.0",
+  "icon": "media/icon.png",
+  "homepage": "https://workpods.ai/tools/agent-ready",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WorkPodsAgents/agent-ready-vscode"
+  },
+  "bugs": {
+    "url": "https://github.com/WorkPodsAgents/agent-ready-vscode/issues"
+  },
+  "engines": {
+    "vscode": "^1.101.0"
+  },
+  "categories": [
+    "AI",
+    "Linters",
+    "Other"
+  ],
+  "keywords": [
+    "seo",
+    "seo audit",
+    "website audit",
+    "ai search",
+    "geo",
+    "aeo",
+    "llms.txt",
+    "robots.txt",
+    "schema markup",
+    "mcp"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "mcpServerDefinitionProviders": [
+      {
+        "id": "workpods.agent-ready",
+        "label": "Agent Ready Website Audit"
+      }
+    ],
+    "commands": [
+      {
+        "command": "agentReady.checkPage",
+        "title": "SEO audit of a page",
+        "category": "Agent Ready"
+      },
+      {
+        "command": "agentReady.checkAiCrawlers",
+        "title": "Check AI crawler access",
+        "category": "Agent Ready"
+      },
+      {
+        "command": "agentReady.checkSiteFiles",
+        "title": "Check robots.txt, sitemaps and llms.txt",
+        "category": "Agent Ready"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "vscode:prepublish": "npm run compile",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "~1.101.0",
+    "@vscode/vsce": "^3.0.0",
+    "typescript": "^5.6.0"
+  }
+}
